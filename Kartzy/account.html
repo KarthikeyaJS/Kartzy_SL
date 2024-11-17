@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Details</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/f390425e8d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" type="image/x-icon" href="images/logo-white.png" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="path-to-fontawesome/font-awesome.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/logo.jpg" width="125px" />
+          </a>
+        </div>
+        <div class="search_bar">
+          <input
+            type="text"
+            name="search"
+            placeholder="Search for products, brands and more"
+          />
+          <button type="submit" class="search-button">
+            <img src="images\icons8-search-24.png" />
+          </button>
+        </div>
+        <nav>
+          <ul id="MenuItems">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="allproducts.html">Products</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html">
+          <img
+            class="cart-image"
+            src="images/cart.png"
+            width="30px"
+            height="30px"
+          />
+        </a>
+        <div class="toggle">
+          <i class="fa-solid fa-moon toggle-icon"></i>
+          <i class="fa-solid fa-sun toggle-icon"></i>
+          <div class="toggle-ball"></div>
+        </div>
+        <img src="images/menu.png" class="menu-icon" onclick="menutoggle()" />
+      </div>
+    </div>
+    <!-- -----------Account-Page------------------->
+    <div class="account-page">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-2">
+            <img src="images/image1.jpg" width="100%" />
+          </div>
+          <div class="col-2">
+            <div class="form-container">
+              <div class="form-btn">
+                <span onclick="login()">Login</span>
+                <span onclick="register()">Register</span>
+                <hr id="Indicator" />
+              </div>
+              <form id="LoginForm">
+                <input
+                  class="input-field"
+                  type="text"
+                  placeholder="Username"
+                  id="email"
+                />
+                <input
+                  class="input-field"
+                  type="password"
+                  placeholder="Password"
+                  id="password"
+                />
+                <button id="loginButton" class="btn">Login</button>
+                <a href="">Forgot Password ?</a>
+              </form>
+              <form id="RegForm">
+                <input
+                  class="input-fielsd"
+                  type="text"
+                  placeholder="Username"
+                />
+                <input class="input-field" type="email" placeholder="Email" />
+                <input
+                  class="input-field"
+                  type="password"
+                  placeholder="Password"
+                />
+                <button type="submit" class="btn">Register</button>
+              </form>
+            </div>
+            <div id="ordersContainer">
+              
+                <div id="ordersRow" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                  <!-- Ordered items will be dynamically inserted here -->
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!------footer--------->
+    <div class="footer">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Android and ios mobile phone</p>
+            <div class="app-logo">
+              <img src="images/play-store.png" class="footer-img" />
+              <img src="images/app-store.png" class="footer-img" />
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <p>
+                Our Purpose is to Sustainably make the Pleasure and Benefits of
+                fashion Accessible to the many
+              </p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+          <div class="footer-col-4">
+            <h3>Follow Us</h3>
+            <div class="socialbtns" align="center">
+              <ul>
+                <li><a href="#" class="fa fa-lg fa-facebook"></a>Facebook</li>
+                <br />
+                <li><a href="#" class="fa fa-lg fa-twitter"></a>Twitter</li>
+                <br />
+                <li><a href="#" class="fa fa-lg fa-instagram"></a>Instagram</li>
+                <br />
+                <li><a href="#" class="fa fa-lg fa-youtube"></a>Youtube</li>
+                <br />
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <p class="copyright">
+          Copyright &copy
+          <script type="text/javascript">
+            document.write(new Date().getFullYear());
+          </script>
+          - RedStore
+        </p>
+      </div>
+    </div>
+    <!-- --------------JS for toggle menu--------- -->
+    <script>
+      var MenuItems = document.getElementById("MenuItems");
+      MenuItems.style.maxHeight = "0px";
+
+      function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+          MenuItems.style.maxHeight = "200px";
+        } else {
+          MenuItems.style.maxHeight = "0px";
+        }
+      }
+    </script>
+    <!-- ----------------JS for toggle form --------- -->
+    <script>
+      var LoginForm = document.getElementById("LoginForm");
+      var RegForm = document.getElementById("RegForm");
+      var Indicator = document.getElementById("Indicator");
+
+      function register() {
+        RegForm.style.transform = "translateX(0px)";
+        LoginForm.style.transform = "translateX(0px)";
+        Indicator.style.transform = "translateX(100px)";
+      }
+
+      function login() {
+        RegForm.style.transform = "translateX(300px)";
+        LoginForm.style.transform = "translateX(300px)";
+        Indicator.style.transform = "translateX(0px)";
+      }
+      const ball = document.querySelector(".toggle-ball");
+      const items = document.querySelectorAll(
+        ".row,body,.container,.menu-icon,.navbar,.header,.toggle"
+      );
+      const cartImage = document.querySelector(".cart-image");
+      ball.addEventListener("click", () => {
+        items.forEach((item) => {
+          item.classList.toggle("active");
+        });
+        ball.classList.toggle("active");
+        MenuItems.classList.toggle("active");
+        cartImage.classList.toggle("bgm-change");
+      });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+
+      // Event listener for login button click
+      document
+        .getElementById("loginButton")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent form submission
+
+          // Get email (username) and password from the input fields
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          // Check if email and password are not empty
+          if (!email || !password) {
+            alert("Please fill in both email and password.");
+            return;
+          }
+
+          // Send login request to the backend via query parameters
+          fetch(
+            `http://localhost:5000/api/users/login/query?email=johndoe@example.com&password=hashedpassword123`,
+            {
+              method: "GET", // HTTP method for retrieving data
+            }
+          )
+            .then((response) => response.json()) // Parse the JSON response
+            .then((data) => {
+              if (data.message === "Login successful") {
+                // Handle successful login (e.g., redirect to dashboard or home page)
+                // alert("Login successful!");
+
+                document.querySelector('.form-container').style.display = 'none';
+                // document.querySelector('#ordersContainer').style.display = 'block';
+
+                fetchOrders("alice.smith@example.com");
+                // Optionally, redirect to another page:
+                // window.location.href = "/dashboard";
+              } 
+            })
+            // .catch((error) => {
+            //   console.error("Error during login:", error);
+            //   alert("An error occurred. Please try again.");
+            // });
+        });
+
+
+        async function fetchOrders(email) {
+            
+  try { 
+    // Send a GET request to the server with the email as a query parameter
+    const response = await fetch(`http://localhost:5000/api/users/user/orders?email=alice.smith@example.com`);
+    if (!response.ok) {
+      throw new Error("Failed to fetch user data");
+    }
+
+    const data = await response.json();
+
+    // Access the user's orders
+    const user = data.user;
+    const orders = user.productsPurchased;
+
+    const ordersContainer = document.getElementById("ordersRow");
+    ordersContainer.innerHTML = ""; // Clear existing orders
+
+    if (orders && orders.length > 0) {
+      orders.forEach((order) => {
+        const orderItem = document.createElement("div");
+        orderItem.classList.add("order-item");
+        orderItem.style = "border: 1px solid #ccc; padding: 10px; border-radius: 8px; width: 250px;";
+
+        // Dynamically insert order details
+        const productName = "Red-Tshirt" 
+        // const productName =order.productId ? order.productId.name : "Unknown Product"; // Handle null productId
+        orderItem.innerHTML = `
+          <h4>Product: ${productName}</h4>
+          <p>Quantity: ${order.quantity}</p>
+          <p>Status: ${order.orderStatus}</p>
+        `;
+
+        ordersContainer.appendChild(orderItem);
+      });
+
+      // Show the orders section
+      document.getElementById("ordersContainer").style.display = "block";
+    } else {
+      alert("No orders found.");
+    }
+  } catch (error) {
+    console.error("Error fetching orders:", error);
+    alert("An error occurred while fetching orders.");
+  }
+}
+
+    </script>
+  </body>
+</html>

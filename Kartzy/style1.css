@@ -1,0 +1,179 @@
+#chatContainer {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  /* Chat Icon Styling */
+  #chatIcon {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+
+  #chatIcon:hover {
+    transform: scale(1.1);
+  }
+
+  #chatIcon img {
+    width: 80px; /* Medium width */
+    height: 80px; /* Medium height */
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  /* Popup Text Styling */
+  #popupText {
+    display: none;
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #6f8bde;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0.8;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  #chatIcon:hover #popupText {
+    display: block;
+  }
+
+  /* Chat Box Styling */
+  #chatBox {
+    display: none;
+    width: 350px;  /* Increased width */
+    height: 500px; /* Increased height */
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+
+  /* Chat Box Header */
+  #chatBoxHeader {
+    background: linear-gradient(45deg, #5b86e5, #36d1dc);
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px; /* Increased font size */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  /* Messages Section */
+  #messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd; /* Subtle separation */
+    border-top: 1px solid #ddd;  /* Subtle separation */
+  }
+
+  .message {
+    margin-bottom: 10px;
+    display: flex;
+    position: relative;
+  }
+
+  /* User and Bot Message Styling */
+  .userMessage, .botMessage {
+    max-width: 70%;
+    padding: 12px 20px;
+    border-radius: 15px;
+    line-height: 1.5;
+    font-size: 14px;
+    word-wrap: break-word;
+  }
+
+  .userMessage {
+    background: linear-gradient(45deg, #a0b1d6, #bbecf0);
+    color: white;
+    align-self: flex-end;
+    margin-left: auto;
+  }
+
+  .botMessage {
+    background-color: #f1f1f1;
+    color: #333;
+    align-self: flex-start;
+  }
+
+  /* User Input Section */
+  #userInputContainer {
+    display: flex;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+  }
+
+  #userInput {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    margin-right: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #sendButton {
+    background: linear-gradient(45deg, #5b86e5, #36d1dc);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+    font-size: 16px;
+  }
+
+  #sendButton:hover {
+    background-color: #0056b3;
+  }
+
+  /* Animations for messages */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .message {
+    animation: fadeIn 0.5s ease;
+  }
+
+  /* Copy Button Styling */
+  .copyButton {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0;  /* Initially hidden */
+    transition: opacity 0.3s ease;
+  }
+
+  .message:hover .copyButton {
+    opacity: 1;  /* Show when the message is hovered */
+  }
+
+  .copyButton img {
+    width: 20px;
+    height: 20px;
+  }
